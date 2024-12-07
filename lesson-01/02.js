@@ -7,12 +7,12 @@
 // your code
 
 let n = 10;
-let fact = 1;
+let factorial = 1;
 
 //n!=n×(n−1)×(n−2)- формула
 //факториал числа 10
 while (n >= 1) { //цикл работает пока 10 не будет 10
- fact = fact * n;
-  n --           //10 отнимает - 1
+  factorial = factorial * n;
+  n--;          //10 отнимает - 1
 }
-console.log(fact);
+console.log(factorial);
