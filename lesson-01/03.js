@@ -6,10 +6,9 @@
 
 // your code
 let sum = 0;
-const number = 1;
-while (sum <= 0) {    // цикл запуститься
-  if (number <= 20) { // если цифра меньше 20 то работает цикл
-    sum = number % 20; // получаем
-    sum += number     // в сумму копим цифры
-  }
-}console.log(sum);     //выводим цикл
+let number = 1;
+while (number <= 20) {// цикл запуститься
+  sum += number
+  number += 2 // дабавляем каждое   четное 2- число
+}
+console.log(sum); //выводим сумму
