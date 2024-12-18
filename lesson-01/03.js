@@ -9,6 +9,6 @@ let sum = 0;
 let number = 1;
 while (number <= 20) {// цикл запуститься
   sum += number
-  number += 2 // дабавляем каждое   четное 2- число
+  number += 2 // дабавляем каждое  четное 2- число
 }
 console.log(sum); //выводим сумму
