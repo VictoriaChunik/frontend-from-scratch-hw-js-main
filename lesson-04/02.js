@@ -19,15 +19,14 @@
 */
 
 
-let i = 0; // счетчик
-function findUniqueElements(array) { //  исходный массив
-  for (let i = 0; i < array.length; i++) { //  итерируемся по массиву
-                //3,3,4
-    array.splice(3,3,4);// спомошью метода splice мы удаляем цифры из массива
-    if (array) { //  получаем новый массив  и проверяем его
-      return array; //  возрасшаем новый полученый массив // Выводит: [1, 2, 3, 4]
+function findUniqueElements(array) { // исходный массив
+  const uniqueElements = []; // создаем новый массив для уникальных элементов
+  for (let i = 0; i < array.length; i++) { // итерируемся по массиву
+    if (!uniqueElements.includes(array[i])) { // проверяем, содержится ли элемент в массиве уникальных элементов
+      uniqueElements.push(array[i]); // если нет, добавляем его
     }
   }
-}                             //0, 1, 2, 3, 4, 5 - индекс
-console.log(findUniqueElements([1, 2, 3, 2, 1, 4]));// Выводит: [1, 2, 3, 4]
-console.log(findUniqueElements([[1, 2, 2, 4, 5]]));
+  return uniqueElements; // возвращаем массив уникальных элементов
+}
+
+console.log(findUniqueElements([1, 2, 3, 2, 1, 4])); // Выводит: [1, 2, 3, 4]
