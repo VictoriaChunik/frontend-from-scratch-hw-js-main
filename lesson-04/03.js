@@ -22,14 +22,16 @@ findCommonElements([1, 2, 3], [2, 3, 4]) // [2, 3]
 */
 
 
-let i = 0; // счетчик
-function findCommonElements(array1, array2) { //  исходный массив
-  for (let i = 0; i < array1.length; i++) { //  итерируемся по массиву
-    array1,array2.splice(2,3);// спомошью метода splice мы удаляем цифры из массива
-    if (array1) { //  получаем новый массив  и проверяем его
-      return array1, array2 //  возрасшяем новый полученый массив // [2, 3]
+function findCommonElements(array1, array2) {
+  const uniqueElements = []; // создаем пустой массив для хранения уникальных элементов
+
+  for (let i = 0; i < array1.length; i++) { // итерируемся по первому массиву
+    if (array2.includes(array1[i]) && !uniqueElements.includes(array1[i])) { // проверяем, содержится ли элемент в array2 и уникален ли он
+      uniqueElements.push(array1[i]); // добавляем элемент в массив уникальных элементов
     }
-    return []
   }
-}                          //0, 1, 2,   3  4, 5- индекс
-console.log(findCommonElements([1, 2, 3], [2, 3, 4]));// Выводит: [2, 3]
+
+  return uniqueElements; // возвращаем массив уникальных элементов
+}
+
+console.log(findCommonElements([1, 2, 3], [2, 3, 4])); // Выводит: [2, 3]
