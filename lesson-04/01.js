@@ -25,6 +25,5 @@ function includesElement(array, element) {
   return false; // Если цикл завершился, и элемент не найден, возвращаем false
 }
 
-//console.log(includesElement([1, 2, 3], 2)); // Вывод: true
-
+console.log(includesElement([1, 2, 3], 2)); // Вывод: true
 console.log(includesElement([1, 2, 3], 4)); // Вывод: false

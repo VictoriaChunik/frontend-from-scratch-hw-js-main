@@ -21,17 +21,15 @@ findCommonElements([1, 2, 3], [2, 3, 4]) // [2, 3]
 Переписывать её не нужно, она доступна по всему проекту за счёт hoisting.
 */
 
-// function findCommonElements(array1, array2) {
-// }
+
 let i = 0; // счетчик
-function includesElement(array1, array2) { //  исходный массив
+function findCommonElements(array1, array2) { //  исходный массив
   for (let i = 0; i < array1.length; i++) { //  итерируемся по массиву
     array1,array2.splice(2,3);// спомошью метода splice мы удаляем цифры из массива
     if (array1) { //  получаем новый массив  и проверяем его
       return array1, array2 //  возрасшяем новый полученый массив // [2, 3]
-    } else {
-      return []
     }
+    return []
   }
 }                          //0, 1, 2,   3  4, 5- индекс
-console.log(includesElement([1, 2, 3], [2, 3, 4]));// Выводит: [2, 3]
+console.log(findCommonElements([1, 2, 3], [2, 3, 4]));// Выводит: [2, 3]
