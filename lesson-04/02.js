@@ -20,7 +20,7 @@
 // function findUniqueElements(array) {
 
 let i = 0; // счетчик
-function includesElement(array) { //  исходный массив
+function findUniqueElements(array) { //  исходный массив
   for (let i = 0; i < array.length; i++) { //  итерируемся по массиву
     array.splice(3,3,4);// спомошью метода splice мы удаляем цифры из массива
     if (array) { //  получаем новый массив  и проверяем его
@@ -28,4 +28,4 @@ function includesElement(array) { //  исходный массив
     }
   }
 }                          //0, 1, 2, 3, 4, 5 - индекс
-console.log(includesElement([1, 2, 3, 2, 1, 4]));// Выводит: [1, 2, 3, 4]
+console.log(findUniqueElements([1, 2, 3, 2, 1, 4]));// Выводит: [1, 2, 3, 4]
