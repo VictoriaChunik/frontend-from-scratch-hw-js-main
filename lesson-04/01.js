@@ -19,7 +19,7 @@ includesElement([1, 2, 3], 2)  // должен вернуть `true`.
 let i = 0; // счетчик
 function includesElement(array, element) {
   for (let i = 0; i < array.length; i++) {
-    if (element) {
+    if (element === array) {
       return true;
     } else {
       return false;
