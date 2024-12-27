@@ -7,8 +7,10 @@
 // your code
 let sum = 0;
 let number = 1;
-while (number <= 20) {// цикл запуститься
-  sum += number
-  number += 2 // дабавляем каждое  четное 2- число
+while (number <= 20) { // цикл запустится
+  if (number % 2 == 1) {
+    sum += number; // в сумму ложим нечётные числа
+  }
+  number++; // увеличиваем number на 1 в каждом итерации
 }
-console.log(sum); //выводим сумму
+console.log(sum); // выводим сумму
