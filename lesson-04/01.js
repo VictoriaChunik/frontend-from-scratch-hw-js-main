@@ -16,14 +16,15 @@ includesElement([1, 2, 3], 2)  // должен вернуть `true`.
 */
 
 
-let i = 0; // счетчик
 function includesElement(array, element) {
   for (let i = 0; i < array.length; i++) {
-    if (element === array) {
-      return true;
-    } else {
-      return false;
+    if (array[i] === element) {
+      return true; // Если элемент найден, возвращаем true
     }
   }
+  return false; // Если цикл завершился, и элемент не найден, возвращаем false
 }
-console.log(includesElement([1, 2, 3], 2))
+
+//console.log(includesElement([1, 2, 3], 2)); // Вывод: true
+
+console.log(includesElement([1, 2, 3], 4)); // Вывод: false
