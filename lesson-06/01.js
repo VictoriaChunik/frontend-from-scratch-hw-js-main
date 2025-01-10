@@ -24,28 +24,34 @@ const WEB_TECH_IMAGES = [
 ]
 // сначала нужно найти элемент в DOM-model
 
-
 let currentIndex = 0; // Индекс текущего изображения
 
 function updateGallery() {
-  const imageTag = document.getElementById('#web-tech-image');//ID для картинок
-  imageTag.src = WEB_TECH_IMAGES[currentIndex]; // Устанавливаем начальное изображение
+  const imageTag = document.getElementById('web-tech-image'); // Убираем '#'
 
-  const prevButton = document.querySelector('#prev-button');
-  prevButton.addEventListener('click', function () {
-    if (currentIndex > 0) {
-      currentIndex--; // Переход к предыдущему изображению
-      imageTag.src = WEB_TECH_IMAGES[currentIndex];
-    }
-  });
+  if (imageTag) {
+    imageTag.src = WEB_TECH_IMAGES[currentIndex]; // Устанавливаем начальное изображение
 
-  const nextButton = document.querySelector('#next-button');
-  nextButton.addEventListener('click', function () {
-    if (currentIndex < WEB_TECH_IMAGES.length - 1) {
-      currentIndex++; // Переход к следующему изображению
-      imageTag.src = WEB_TECH_IMAGES[currentIndex];
-    }
-  });
+    const prevButton = document.querySelector('#prev-button');
+    prevButton.addEventListener('click', function () {
+      if (currentIndex > 0) {
+        currentIndex--; // Переход к предыдущему изображению
+        imageTag.src = WEB_TECH_IMAGES[currentIndex];
+      }
+    });
+
+    const nextButton = document.querySelector('#next-button');
+    nextButton.addEventListener('click', function () {
+      if (currentIndex < WEB_TECH_IMAGES.length - 1) {
+        currentIndex++; // Переход к следующему изображению
+        imageTag.src = WEB_TECH_IMAGES[currentIndex];
+      }
+    });
+  } else {
+    console.error('Элемент с ID "web-tech-image" не найден.');
+  }
 }
 
-updateGallery(); // Инициализация галереи
+document.addEventListener('DOMContentLoaded', function () {
+  updateGallery(); // Инициализация галереи
+});
