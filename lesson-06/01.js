@@ -16,7 +16,9 @@
 🧙‍♂️ Совет: обратите внимание на управление индексом
 текущего изображения — это ключ к успешному переключению изображений.
 */
-
+document.addEventListener('DOMContentLoaded', function () {
+  updateGallery(); // Инициализация галереи
+});
 const WEB_TECH_IMAGES = [
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/32f74d50-68d0-46aa-b035-7b3a5300d2c1_js-magic-logo.jpg',
   'https://production-it-incubator.s3.eu-central-1.amazonaws.com/file-manager/Image/c8a1f4a6-1337-4899-bdfd-a8c9c7bb806a_css-magic-logo.jpg',
@@ -24,19 +26,20 @@ const WEB_TECH_IMAGES = [
 ]
 // сначала нужно найти элемент в DOM-model
 
-let currentIndex = 0; // Индекс текущего изображения
+let currentIndex =[0]; // Индекс текущего изображения  c 0
 
 function updateGallery() {
-  const imageTag = document.getElementById('web-tech-image'); // Убираем '#'
+  const img = document.getElementById('web-tech-image');
 
-  if (imageTag) {
-    imageTag.src = WEB_TECH_IMAGES[currentIndex]; // Устанавливаем начальное изображение
+  if (img) {
+    img.src = WEB_TECH_IMAGES[currentIndex];// Устанавливаем начальное изображение
+    img.classList.add('srs')
 
-    const prevButton = document.querySelector('#prev-button');
+    const prevButton = document.querySelector('#prev-button'); //id -#prev-button'
     prevButton.addEventListener('click', function () {
       if (currentIndex > 0) {
         currentIndex--; // Переход к предыдущему изображению
-        imageTag.src = WEB_TECH_IMAGES[currentIndex];
+        img.src = WEB_TECH_IMAGES[currentIndex];
       }
     });
 
@@ -44,14 +47,8 @@ function updateGallery() {
     nextButton.addEventListener('click', function () {
       if (currentIndex < WEB_TECH_IMAGES.length - 1) {
         currentIndex++; // Переход к следующему изображению
-        imageTag.src = WEB_TECH_IMAGES[currentIndex];
+        img.src = WEB_TECH_IMAGES[currentIndex];
       }
     });
-  } else {
-    console.error('Элемент с ID "web-tech-image" не найден.');
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  updateGallery(); // Инициализация галереи
-});
