@@ -26,29 +26,32 @@ const WEB_TECH_IMAGES = [
 ]
 // сначала нужно найти элемент в DOM-model
 
-let currentIndex =[0]; // Индекс текущего изображения  c 0
+let currentIndex = 0; // Индекс текущего изображения с 0
 
 function updateGallery() {
   const img = document.getElementById('web-tech-image');
 
   if (img) {
-    img.src = WEB_TECH_IMAGES[currentIndex];// Устанавливаем начальное изображение
-    img.classList.add('srs')
+    img.src = WEB_TECH_IMAGES[currentIndex]; // Устанавливаем начальное изображение
 
-    const prevButton = document.querySelector('#prev-button'); //id -#prev-button'
+    const prevButton = document.querySelector('#prev-button');
     prevButton.addEventListener('click', function () {
-      if (currentIndex > 0) {
+      if (currentIndex === 0) {
+        currentIndex = WEB_TECH_IMAGES.length - 1; // Переход к последнему изображению
+      } else {
         currentIndex--; // Переход к предыдущему изображению
-        img.src = WEB_TECH_IMAGES[currentIndex];
       }
+      img.src = WEB_TECH_IMAGES[currentIndex]; // Обновляем изображение
     });
 
     const nextButton = document.querySelector('#next-button');
     nextButton.addEventListener('click', function () {
-      if (currentIndex < WEB_TECH_IMAGES.length - 1) {
+      if (currentIndex === WEB_TECH_IMAGES.length - 1) {
+        currentIndex = 0; // Переход к первому изображению
+      } else {
         currentIndex++; // Переход к следующему изображению
-        img.src = WEB_TECH_IMAGES[currentIndex];
       }
+      img.src = WEB_TECH_IMAGES[currentIndex]; // Обновляем изображение
     });
   }
 }
