@@ -28,7 +28,7 @@ const WEB_TECH_IMAGES = [
 let currentIndex = 0; // Индекс текущего изображения
 
 function updateGallery() {
-  const imageTag = document.getElementById('web-tech-image');
+  const imageTag = document.getElementById('#web-tech-image');//ID для картинок
   imageTag.src = WEB_TECH_IMAGES[currentIndex]; // Устанавливаем начальное изображение
 
   const prevButton = document.querySelector('#prev-button');
@@ -49,4 +49,3 @@ function updateGallery() {
 }
 
 updateGallery(); // Инициализация галереи
-
