@@ -30,10 +30,8 @@ let currentIndex = 0; // Индекс текущего изображения с
 
 function updateGallery() {
   const img = document.getElementById('web-tech-image');
-
   if (img) {
     img.src = WEB_TECH_IMAGES[currentIndex]; // Устанавливаем начальное изображение
-
     const prevButton = document.querySelector('#prev-button');
     prevButton.addEventListener('click', function () {
       if (currentIndex === 0) {

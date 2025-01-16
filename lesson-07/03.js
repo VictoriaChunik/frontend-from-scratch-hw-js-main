@@ -10,5 +10,11 @@
 */
 
 function truncate(str, maxLength) {
-  // your code
+  if (str.length > maxLength) {
+    return str.slice(0, maxLength - 3) + '...'; // Обрезаем строку и добавляем '...'
+  }
+  return str; // Если длина строки меньше maxLength, возвращаем её как есть
 }
+
+console.log(truncate("Вот, что мне действительно нравится в этом", 20)); // "Вот, что мне действи..."
+console.log(truncate("Короткая строка", 20)); // "Короткая строка"

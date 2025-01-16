@@ -3,12 +3,51 @@
  * Если строка является числом, функция должна возвращать true, в противном случае - false.
  */
 
+
 function isNumeric(str) {
-  // your code
+  // 1. Проверяем, является ли str строкой
+  if (typeof str !== 'string') {
+    return false; // Если не строка, возвращаем false
+  }
+
+  // 2. Проверяем, является ли строка пустой
+  if (str === " ") {
+    return false; // Пустая строка не является числом
+  }
+
+  // 3. Переменная для отслеживания наличия десятичной точки
+  let hasDecimalPoint = false;
+
+  // 4. Проходим по каждому символу строки
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i]; // Сохраняем текущий символ для удобства
+
+    // 5. Проверяем, является ли символ цифрой
+    if (char >= '0' && char <= '9') {
+      continue; // Если символ цифра, продолжаем
+    }
+
+    // 6. Проверяем, является ли символ десятичной точкой
+    if (char === '.') {
+      // Если уже была найдена одна десятичная точка, возвращаем false
+      if (hasDecimalPoint) {
+        return false; // Две десятичные точки не допустимы
+      }
+      hasDecimalPoint = true; // Устанавливаем флаг, что десятичная точка найдена
+      continue; // Переходим к следующему символу
+    }
+
+    // 7. Если символ не цифра и не десятичная точка, возвращаем false
+    return false;
+  }
+
+  // 8. Если все символы корректные, возвращаем true
+  return true;
 }
 
-// console.log(isNumeric("123")) // Ожидаемый результат: true
-// console.log(isNumeric("12.3")) // Ожидаемый результат: true
-// console.log(isNumeric("123abc")) // Ожидаемый результат: false
-// console.log(isNumeric("abc")) // Ожидаемый результат: false
-// console.log(isNumeric(" ")) // Ожидаемый результат: false
+// Примеры использования
+console.log(isNumeric("123"));    // Ожидаемый результат: true
+console.log(isNumeric("12.3")) // Ожидаемый результат: true
+console.log(isNumeric("123abc")); // Ожидаемый результат: false
+console.log(isNumeric("abc"));    // Ожидаемый результат: false
+console.log(isNumeric(" "));      // Ожидаемый результат: false
