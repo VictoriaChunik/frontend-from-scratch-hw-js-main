@@ -11,7 +11,7 @@
 
 function truncate(str, maxLength) {
   if (str.length > maxLength) {
-    return str.slice(0, maxLength - 3) + '...'; // Обрезаем строку и добавляем '...'
+    return str.slice(0, maxLength) + '...'; // Обрезаем строку и добавляем '...'
   }
   return str; // Если длина строки меньше maxLength, возвращаем её как есть
 }
