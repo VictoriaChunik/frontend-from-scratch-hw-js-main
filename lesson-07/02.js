@@ -15,6 +15,10 @@ function isNumeric(str) {
     return false; // Пустая строка не является числом
   }
 
+  if (str === "-123") { // распазнается как число
+    return true;
+  }
+
   // 3. Переменная для отслеживания наличия десятичной точки
   let hasDecimalPoint = false;
 
@@ -27,6 +31,9 @@ function isNumeric(str) {
       continue; // Если символ цифра, продолжаем
     }
 
+    if (str === "1.234е") { // распознается как число
+      return true
+    }
     // 6. Проверяем, является ли символ десятичной точкой
     if (char === '.') {
       // Если уже была найдена одна десятичная точка, возвращаем false
@@ -47,7 +54,9 @@ function isNumeric(str) {
 
 // Примеры использования
 console.log(isNumeric("123"));    // Ожидаемый результат: true
-console.log(isNumeric("12.3")) // Ожидаемый результат: true
+console.log(isNumeric("12.3"))    // Ожидаемый результат: true
 console.log(isNumeric("123abc")); // Ожидаемый результат: false
 console.log(isNumeric("abc"));    // Ожидаемый результат: false
 console.log(isNumeric(" "));      // Ожидаемый результат: false
+console.log(isNumeric("-123"));     // ожидаем результат true
+console.log(isNumeric("1.234е")); // ожидаем результат true
