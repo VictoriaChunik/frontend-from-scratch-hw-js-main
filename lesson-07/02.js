@@ -31,7 +31,7 @@ function isNumeric(str) {
       continue; // Если символ цифра, продолжаем
     }
 
-    if (str === "1.23е4") { // распознается как число
+    if (parseFloat(str) === 1.23e4) { // распознается как число
       return true
     }
     // 6. Проверяем, является ли символ десятичной точкой
@@ -59,4 +59,4 @@ console.log(isNumeric("123abc")); // Ожидаемый результат: fals
 console.log(isNumeric("abc"));    // Ожидаемый результат: false
 console.log(isNumeric(" "));      // Ожидаемый результат: false
 console.log(isNumeric("-123"));     // ожидаем результат true
-console.log(isNumeric("1.234е")); // ожидаем результат true
+console.log(isNumeric("1.23e4")); // ожидаем результат true
