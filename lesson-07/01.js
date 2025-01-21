@@ -22,6 +22,4 @@ function capitalizeWords(str) {
     // Объединяем слова обратно в строку
     return words.join(' '); // 'Hello World From JavaScript'
 }
-
 console.log(capitalizeWords(str));
-
