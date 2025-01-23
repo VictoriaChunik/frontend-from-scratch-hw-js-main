@@ -63,5 +63,5 @@ cancelButton.addEventListener('click', () => {
   // Остановка таймера
   clearInterval(timerId);
   countdownDisplay.textContent = 'Отменено'; // Отображаем сообщение "Отменено"
-  isTimerRunning = false; // Сбрасываем состояние таймера
+  timerId = null; // Сбрасываем идентификатор таймера
 });
