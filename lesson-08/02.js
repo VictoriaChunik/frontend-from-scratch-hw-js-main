@@ -47,7 +47,7 @@ startButton.addEventListener('click', () => {
   isTimerRunning = true; // Устанавливаем состояние таймера в "работает"
 
   // Устанавливаем интервал
-  timerId = setInterval(() => {
+    timerId = setInterval(() => {
     counter--; // Уменьшаем счётчик на 1
     countdownDisplay.textContent = counter; // Обновляем отображение
 
@@ -61,6 +61,9 @@ startButton.addEventListener('click', () => {
 
 cancelButton.addEventListener('click', () => {
   // Проверяем, запущен ли таймер
+  if (!isTimerRunning) {
+    return;
+  }
     clearInterval(timerId);
     countdownDisplay.textContent = 'Отменено'; // Отображаем сообщение "Отменено"
     isTimerRunning = false; // Сбрасываем состояние таймера
