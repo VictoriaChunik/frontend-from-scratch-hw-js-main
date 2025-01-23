@@ -31,12 +31,13 @@
 функциями setInterval (https://doka.guide/js/setinterval/) и clearInterval(https://doka.guide/js/clearinterval/). Они очень похоже на setTimeout и clearTimeout.
  */
 
-const startButton = document.getElementById('start')
-const cancelButton = document.getElementById('cancel')
-const countdownDisplay = document.getElementById('countdown')
 
-let isTimerStarted = false
-let timerId
+const startButton = document.getElementById('start');
+const cancelButton = document.getElementById('cancel');
+const countdownDisplay = document.getElementById('countdown');
+
+let isTimerRunning = false; // Переменная для отслеживания состояния таймера
+let timerId; // Переменная для хранения идентификатора таймера
 
 startButton.addEventListener('click', () => {
   if (isTimerRunning) return; // Если таймер уже запущен, ничего не делаем
@@ -59,8 +60,6 @@ startButton.addEventListener('click', () => {
 });
 
 cancelButton.addEventListener('click', () => {
-  if (!isTimerRunning) return; // Если таймер не работает, ничего не делаем
-
   // Остановка таймера
   clearInterval(timerId);
   countdownDisplay.textContent = 'Отменено'; // Отображаем сообщение "Отменено"
