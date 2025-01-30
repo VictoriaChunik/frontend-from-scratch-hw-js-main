@@ -7,24 +7,19 @@
 * Для успешного прохождения тестов не меняйте названия переменных!
 */
 
-let dice1 = 1; // your code
-let dice2  = 6;// your code
-let isWinningDouble = false; // your code
+let isWinningDouble = false;
 
-while (isWinningDouble) {
-  // Тело цикла будет содержать логику игры
-  let isWinningDouble = Math.floor(Math.random() * 6)// идет выбор из 2 возможных вариантов
+let dice1 = Math.floor(Math.random() * 6) + 1; // Случайное число от 1 до 6
+let dice2 = Math.floor(Math.random() * 6) + 1; // Случайное число от 1 до 6
 
-  if (dice1 === dice2) {
-    console.log('Первый бросок: ' + dice1)
-  } else {
-    console.log('Второй бросок: ' + dice2)
-  }
-  if (isWinningDouble >= 3) {
-  console.log('Выигрышный дубль!')
-  } else {
-  console.log('Не выигрышный дубль.')
-  }
-  isWinningDouble = true;
+console.log('Первый бросок: ' + dice1);
+console.log('Второй бросок: ' + dice2);
+
+if (dice1 === dice2 && dice1 > 3) {
+  console.log('Выигрышный дубль!');
+  isWinningDouble = true; // Устанавливаем true только при выигрышном дубле
+} else {
+  console.log('Не выигрышный дубль.');
 }
-console.log(isWinningDouble)
+
+console.log('Результат: ' + isWinningDouble);

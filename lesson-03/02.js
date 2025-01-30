@@ -8,5 +8,6 @@ function isEven(number) {
     return false
   }
 }
-let result = isEven(9)
-console.log(result)
+// let result = isEven(9)
+// console.log(result)
+console.log(isEven(9))

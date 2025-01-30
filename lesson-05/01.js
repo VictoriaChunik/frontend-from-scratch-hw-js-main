@@ -14,7 +14,7 @@
 значение `amount` к текущему количеству этого ресурса в объекте.
 */
 
-const game = {
+const game = { // обьект
   resources: {
     gold: 250,//(resource) тип ресурса
     lumber: 100,//amount

@@ -17,6 +17,7 @@ let isAccess;// тогда дать допуск
 // your code
 
 // Проверяем условия доступа
+
 if ((isAdmin || isVerifiedUser) && (hasSpecialPermission || hasTemporaryPass)) {
   isAccess = true; // Доступ предоставлен
 } else {

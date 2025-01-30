@@ -16,8 +16,8 @@ includesElement([1, 2, 3], 2)  // должен вернуть `true`.
 */
 
 
-function includesElement(array, element) {
-  for (let i = 0; i < array.length; i++) {
+function includesElement(array, element) {//  любой массив
+  for (let i = 0; i < array.length; i++) {//  содержится даный элемент в массиве
     if (array[i] === element) {
       return true; // Если элемент найден, возвращаем true
     }
@@ -27,3 +27,4 @@ function includesElement(array, element) {
 
 console.log(includesElement([1, 2, 3], 2)); // Вывод: true
 console.log(includesElement([1, 2, 3], 4)); // Вывод: false
+

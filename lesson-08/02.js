@@ -61,7 +61,7 @@ startButton.addEventListener('click', () => {
 
 cancelButton.addEventListener('click', () => {
   // Проверяем, запущен ли таймер
-  if (!isTimerRunning) {
+  if (!isTimerRunning) { //  делаем проверку  таймера
     return;
   }
     clearInterval(timerId);
