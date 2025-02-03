@@ -36,7 +36,6 @@ const model = { //  хранения данных бизнес логики
   // your code
   deleteMovie(id) {                                     //taskId
     this.movies = this.movies.filter((movie) => movie.id !== id)
-    console.log('movies', this.movies)
     view.renderMovies(this.movies)
   }
 
@@ -66,7 +65,7 @@ const view = {
     // your code      оработчик события
     list.addEventListener('click', function (event) {
       if (event.target.classList.contains('delete-button')) { //taskId
-        const id = parseFloat(event.target.parentElement.id)
+        const id = +event.target.parentElement.id
         controller.deleteMovie(id)
       }
     })
