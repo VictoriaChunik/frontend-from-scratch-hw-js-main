@@ -51,7 +51,7 @@ const view = {
     const inputTitle = document.querySelector('.input-title')
     const inputDescription = document.querySelector('.input-description')
     const list = document.querySelector('.list')
-  
+
 
     form.addEventListener('submit', function (event) {
       event.preventDefault()
@@ -66,7 +66,7 @@ const view = {
     // your code      оработчик события
     list.addEventListener('click', function (event) {
       if (event.target.classList.contains('delete-button')) { //taskId
-        const id = +event.target.parentElement.id
+        const id = parseFloat(event.target.parentElement.id)
         controller.deleteMovie(id)
       }
     })
