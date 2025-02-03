@@ -37,7 +37,6 @@ const model = { //  хранения данных бизнес логики
   deleteMovie(id) {                                     //taskId
     this.movies = this.movies.filter((movie) => movie.id !== id)
     console.log('movies', this.movies)
-
     view.renderMovies(this.movies)
   }
 
@@ -52,7 +51,7 @@ const view = {
     const inputTitle = document.querySelector('.input-title')
     const inputDescription = document.querySelector('.input-description')
     const list = document.querySelector('.list')
-    console.log(list)
+  
 
     form.addEventListener('submit', function (event) {
       event.preventDefault()
@@ -64,7 +63,7 @@ const view = {
       inputDescription.value = ''
     })
 
-    // your code      бработчик события
+    // your code      оработчик события
     list.addEventListener('click', function (event) {
       if (event.target.classList.contains('delete-button')) { //taskId
         const id = +event.target.parentElement.id
