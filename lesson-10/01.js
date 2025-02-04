@@ -116,6 +116,7 @@ const controller = { // обработка действий пользовате
   }
 }
 
+
 function init() {
   view.init()
 }
