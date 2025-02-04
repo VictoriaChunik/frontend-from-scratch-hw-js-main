@@ -66,6 +66,7 @@ const view = {
     list.addEventListener('click', function (event) {
       if (event.target.classList.contains('delete-button')) { //taskId
         const id = +event.target.parentElement.id
+        // console.log('Deleting movie with ID:', id); // Отладка
         controller.deleteMovie(id)
       }
     })
@@ -112,7 +113,7 @@ const controller = { // обработка действий пользовате
   // your code
   deleteMovie(id) {
     model.deleteMovie(id)
-    view.displayMessage('Фильм успешно удалён')
+    view.displayMessage('Фильм успешно удалён!')
   }
 }
 
